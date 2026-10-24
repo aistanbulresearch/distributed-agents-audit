@@ -34,7 +34,8 @@ again, H1's primary measure is reported as inconclusive. There is no further ret
      (`zero`/`no`/`none` → `0`; other words kept as written, per the codebook, and only when
      the unit follows directly), `below|under <threshold>`, `<threshold> count=k`, and an
      elided unit after an earlier count in the same sentence (`9 genes had P<0.001 and 61 had
-     P<0.01`); a count whose text says the genes "recurred" is out of scope (recurrence).
+     P<0.01`), which also inherits that count's restriction when it is out of scope; a count
+     whose text says the genes "recurred" is out of scope (recurrence).
   3. Row totals (type D): integers only, never a number preceded by a comparison operator;
      descriptive words between the number and `rows/tests` (`Aimp1-target DE`, `gene-level`,
      `gene-by-cell-type`, `non-Ncam1`, `differential-expression`, `target-comparison`); `N genes
@@ -54,28 +55,34 @@ again, H1's primary measure is reported as inconclusive. There is no further ret
   7. Restricted populations (section 3): additionally `covering <genes>`, `direct`, `none of`,
      `all five had`, `each <noun> had`, self-/target-transcript rows, `target rows`, `<X>-row`,
      and `in all N rows`.
-  8. Gene binding: in a sentence (or the sentence after one) about the target's own
-     transcript rows, an equality with no gene token binds to the target; a bare signed
-     decimal right after a gene in a list takes the statistic the list's first item writes
-     first (`Cadm3 logFC -1.227 FDR …, Ptov1 -1.668 FDR …` → logFC; `Nbas score -3.740 logFC …,
+  8. Gene binding stays sentence-local, as section 3 fixes it (an equality with no preceding
+     gene token in its sentence remains `unresolved_context`); a bare signed decimal right
+     after a gene in a list takes the statistic the list's first item writes first (`Cadm3 logFC -1.227 FDR …, Ptov1 -1.668 FDR …` → logFC; `Nbas score -3.740 logFC …,
      Creb3 +3.436 logFC …` → score); values introduced by `all` are distributive and out of
      scope.
-- Development score on sample 1 (not a test; sample 1 was used to build v2): recall 0.964,
-  precision 0.989, binding accuracy 0.984; by type A 0.967, B 0.977, C 0.915, D 1.0.
+- Development score on sample 1 (not a test; sample 1 was used to build v2): recall 0.921,
+  precision 0.988, binding accuracy 0.983; by type A 0.906, B 0.977, C 0.915, D 1.0.
+- Adversarial review round 17 led to four changes before publication: a target-transcript
+  binding across sentences was removed (it went beyond section 3), elided counts inherit
+  their antecedent's restriction, the single attempt is enforced, and the evaluation is bound
+  to the published retry code (below).
 
-**Frozen for the evaluation.** Local commit `211f996` (branch built on the freeze commit
-`925f28f`):
+**Frozen for the evaluation.** The retry is bound like the freeze. The manifest
+`registrations/H1_retry.json` (written by `audit/scripts/h1_retry_manifest.py`) lists the
+SHA-256 of the corrected parser, its tests, the development harness, the evaluation code and
+its tests, this record and the two results that led to the retry, and the commit holding
+them; the reference file is bound as in the freeze manifest. The annotated tag
+`prereg-H1-retry1` is put on the commit adding the manifest, which is pushed to the public
+repository and archived by Software Heritage; the claim (commit and manifest SHA-256) is then
+recorded in `registrations/H1_retry_claim.json`.
 
-| File | SHA-256 |
-|---|---|
-| `audit/lib/h1_extract_v2.py` | `bc4e793ca9243ef28ac946c5aca46eb7341f3da12ad1f713d75d9b8a4ef1d247` |
-| `tests/test_h1_extract_v2.py` | `a03eaed0422531bb858efe39a5d02d714d655799c36fcfbeeedbc9335a91c12e` |
-| `audit/scripts/h1_dev_gate.py` | `805d5a01cadb954dc97e82ee19ba15c14bc55130f439c18e44ca8eb36bb2022d` |
-| `audit/scripts/line_h1.py` | `aff5e43721b206b410f6fc104087d4e49c9b2e087d983d950e4eb88da869d569` |
-
-The evaluation is `line_h1.py gate 2 v2`: the freeze guard, then the frozen gate code
-(`audit/lib/h1_quality.py`) on the frozen sample-2 key, with the frozen criteria. The script
-refuses a second run. If v2 passes, the comparison (section 6) uses v2; if it fails, H1 is
+The evaluation is `line_h1.py gate 2 v2`. It runs the freeze guard; then the retry guard
+(the local retry files match the manifest, and the live archive holds the tag, the commit and
+the manifest); then reserves the single attempt by creating
+`audit/results/h1/line_h1_gate_sample2_v2.attempt.json` atomically (it is never removed, so
+an interrupted attempt still counts); only then reads the sample-2 key and runs the frozen
+gate code (`audit/lib/h1_quality.py`) with the frozen criteria. Only the pairs (sample 1, v1)
+and (sample 2, v2) run. If v2 passes, the comparison (section 6) uses v2; if it fails, H1 is
 reported as inconclusive, the mismatch share shown only descriptively next to the failed
 criteria.
 
