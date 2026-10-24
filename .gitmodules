@@ -1,0 +1,3 @@
+[submodule "upstream/distributed_agent"]
+	path = upstream/distributed_agent
+	url = https://github.com/jinlabneurogenomics/distributed_agent

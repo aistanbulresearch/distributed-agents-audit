@@ -1,0 +1,39 @@
+[project]
+name = "distributed-agents-audit"
+version = "0.1.0"
+description = "Independent audit of the literature corpus released with Sun et al. 2026"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "openpyxl>=3.1",
+    "pyarrow>=17",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+exclude = ["upstream/"]
+
+[[tool.mypy.overrides]]
+module = ["pyarrow", "pyarrow.*", "openpyxl", "openpyxl.*"]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["upstream"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

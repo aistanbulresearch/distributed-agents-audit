@@ -1,0 +1,5 @@
+target_gene,finding_id,finding_type,direction,confidence,literature_status,summary,why_it_matters,genes,n_genes,comparators,cell_types,n_cell_types,evidence_ids,ref_ids,main_caveats
+Arx,F001,cell_type_selectivity,up,high,supports_known_mechanism,Arx summary,why,Tle2|Atp2b3,2,,052 Pvalb Gaba|046 CTX-CGE GABA,2,E002|E003,R001|R003,caveat
+Psmb4,F001,convergent_module,up,moderate,extends_known_mechanism,Psmb4 summary,why,Psmc6,1,Pomp,005 L4-5 IT CTX Glut,1,E001,R001,caveat
+Psmb4,F002,negative_result,,low,,Psmb4 null,why,,0,,,0,E002,,caveat
+Safe_target_17,F001,other,,exploratory,novel_no_direct_literature,control summary,why,,0,,,0,E001,R001,caveat

@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# Frozen registration artifacts keep their exact bytes (hashes in the freeze manifest).
+registrations/** -text

@@ -1,0 +1,525 @@
+{
+  "sample": 1,
+  "inputs": {
+    "H1_annotation_sample1_A.jsonl": "b496a170fe518ede9fde6f9ae4f63ffe6c49c6052d6fef8aa458ee3bac1691c8",
+    "H1_annotation_sample1_B.jsonl": "02e5ab2f08e7edf82217b1512cea8f5e5b09a7fb9d2b9b602823450712881824",
+    "H1_adjudication_sample1.md": "996a483a4e36aff1348c7b2793821500024ec48a75a5e63f80554628c58fce52",
+    "H1_agreement_audit_sample1.md": "c866f7218818c48df8e1d7cae3ac388b7c238adfcf96ce3cdf075679ca42c83f"
+  },
+  "problems": [],
+  "adjudication": {
+    "fields": 27,
+    "fields_changed": 17,
+    "rows_kept": 90,
+    "rows_dropped": 71,
+    "rows_corrected": 0,
+    "rows_added": 0,
+    "resolved_assertions": 90
+  },
+  "adjudication_changes": [
+    {
+      "field": "Ap2m1/E007",
+      "dropped": [
+        [
+          "logfc",
+          "-0.536",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "padj",
+          "6.33e-05",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "n_sig",
+          "1152",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "logfc",
+          "0.984",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "padj",
+          "3.06e-24",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "logfc",
+          "-1.227",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "padj",
+          "2.95e-52",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "logfc",
+          "-1.015",
+          "Other perturbation: Ap2s1."
+        ],
+        [
+          "padj",
+          "2.13e-48",
+          "Other perturbation: Ap2s1."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Armc9/E004",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Restricted five-cell-type population; not target scope."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Brsk2/E007",
+      "dropped": [
+        [
+          "n_rows",
+          "16,762",
+          "Correlation population; out of scope."
+        ],
+        [
+          "n_rows",
+          "17,122",
+          "Correlation population; out of scope."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Cdk8/E004",
+      "dropped": [
+        [
+          "n_sig",
+          "11",
+          "Other perturbation: Med13."
+        ],
+        [
+          "logfc",
+          "-0.427",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "2.46e-04",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00110",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00195",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00276",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00276",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00276",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00702",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.00814",
+          "Other perturbation: Med13."
+        ],
+        [
+          "padj",
+          "0.0434",
+          "Other perturbation: Med13."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Cebpe/E005",
+      "dropped": [
+        [
+          "min_pval",
+          "0.0848",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.1568",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.2574",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.7095",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.8042",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.8162",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.8499",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ],
+        [
+          "min_pval",
+          "0.8715",
+          "Gene-restricted minimum binding is not supplied by the required pattern."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Glra2/E008",
+      "dropped": [
+        [
+          "n_pert",
+          "89",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "logfc",
+          "-0.810",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "pval",
+          "1.92e-8",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "padj",
+          "3.34e-4",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "n_pert",
+          "49",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "logfc",
+          "-1.139",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "pval",
+          "8.30e-8",
+          "Other perturbation: Glrb."
+        ],
+        [
+          "padj",
+          "0.00142",
+          "Other perturbation: Glrb."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Grin2b/E008",
+      "dropped": [
+        [
+          "n_rows",
+          "17122",
+          "Correlation population; out of scope."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Il4ra/E005",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Other perturbation: Il2rg."
+        ],
+        [
+          "min_padj",
+          "0.103637",
+          "Other perturbation: Il2rg."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Itpr1/E007",
+      "dropped": [
+        [
+          "logfc",
+          "-1.256",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "pval",
+          "1.03e-23",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "padj",
+          "1.78e-19",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "n_sig",
+          "187",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "n_rows",
+          "17259",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "logfc",
+          "1.604",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "padj",
+          "2.06e-8",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "logfc",
+          "0.785",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "padj",
+          "3.00e-7",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "logfc",
+          "0.749",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "padj",
+          "1.95e-6",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "logfc",
+          "3.014",
+          "Other perturbation: Atp2a2."
+        ],
+        [
+          "padj",
+          "6.61e-8",
+          "Other perturbation: Atp2a2."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Neurod2/E001",
+      "dropped": [
+        [
+          "min_pval",
+          "0.135",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ],
+        [
+          "min_pval",
+          "0.135",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Pde1c/E001",
+      "dropped": [
+        [
+          "min_pval",
+          "0.062",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ],
+        [
+          "min_pval",
+          "0.062",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Pds5a/E005",
+      "dropped": [
+        [
+          "n_sig",
+          "106",
+          "First later label in the clause binds the count; keep row 1."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Plcb1/E004",
+      "dropped": [
+        [
+          "score",
+          "-5.1634",
+          "Other perturbation: Itpr1."
+        ],
+        [
+          "logfc",
+          "-0.4351",
+          "Other perturbation: Itpr1."
+        ],
+        [
+          "pval",
+          "2.43e-7",
+          "Other perturbation: Itpr1."
+        ],
+        [
+          "padj",
+          "0.00415",
+          "Other perturbation: Itpr1."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Ranbp2/E010",
+      "dropped": [
+        [
+          "min_padj",
+          "0.966",
+          "Restricted-population summary; no standalone cell-bound value."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Sall1/E002",
+      "dropped": [
+        [
+          "n_sig",
+          "1",
+          "Same clause contains 21/22 cell-type recurrence."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Six5/E001",
+      "dropped": [
+        [
+          "min_pval",
+          "0.297",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ],
+        [
+          "min_pval",
+          "0.297",
+          "Restricted self-transcript minimum; neither displayed scope is valid."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "St3gal3/E009",
+      "dropped": [
+        [
+          "pval",
+          "0.0267",
+          "Earlier clause label takes precedence; keep row 3."
+        ],
+        [
+          "pval",
+          "0.0282",
+          "Earlier clause label takes precedence; keep row 5."
+        ],
+        [
+          "pval",
+          "0.0475",
+          "Earlier clause label takes precedence; keep row 7."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    }
+  ],
+  "agreement_audit": {
+    "fields": 20,
+    "fields_changed": 1,
+    "rows_kept": 66,
+    "rows_dropped": 0,
+    "rows_corrected": 0,
+    "rows_added": 1,
+    "resolved_assertions": 67,
+    "fields_with_error": 1,
+    "error_rate": 0.05,
+    "wilson_95": [
+      0.008881448800795402,
+      0.23613119344674205
+    ]
+  },
+  "agreement_audit_changes": [
+    {
+      "field": "Mark3/E002",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "n_sig",
+          "one"
+        ]
+      ]
+    }
+  ],
+  "dc33_full_review_triggered": true,
+  "agreed_fields_not_audited": 73
+}

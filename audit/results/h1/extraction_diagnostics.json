@@ -1,0 +1,38 @@
+{
+  "gene_vocabulary_size": 17994,
+  "non_control_evidence_rows": 17783,
+  "rows_with_extracted_assertion": 11581,
+  "assertions_by_status": {
+    "out_of_scope": 23643,
+    "unresolved_context": 14634,
+    "extracted": 81658
+  },
+  "extracted_by_quantity": {
+    "n_rows": 2103,
+    "n_pert": 7321,
+    "n_ctrl": 4252,
+    "n_sig": 6104,
+    "score": 8472,
+    "logfc": 15913,
+    "padj": 20612,
+    "pval": 14198,
+    "min_pval": 808,
+    "min_padj": 1875
+  },
+  "assertions_by_reason": {
+    "range": 5802,
+    "none": 96292,
+    "recurrence": 2814,
+    "correlation": 10093,
+    "summary_statistic": 2158,
+    "other_perturbation": 2547,
+    "subset_scope": 191,
+    "approximation": 38
+  },
+  "extracted_by_cell_source": {
+    "none": 6093,
+    "row": 44838,
+    "clause": 28156,
+    "sentence": 2571
+  }
+}

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+.env.*
+
+# Network response caches (rebuilt by the scripts, can be large)
+audit/cache/
+
+# Local copies of the preprint (cite the DOI instead)
+*.pdf
+
+# Internal working material belongs outside this repo
+/plan/
+/plans/
+/_internal/
+/internal/
+/notes/
+/decisions/
+/docs/superpowers/
+HANDOVER*
+.remember/
+CLAUDE.md
+MEMORY.md
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

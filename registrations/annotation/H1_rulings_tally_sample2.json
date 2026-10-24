@@ -1,0 +1,292 @@
+{
+  "sample": 2,
+  "inputs": {
+    "H1_annotation_sample2_A.jsonl": "62c2a635168e1d6fe34b02dbba5dccd6a112c343d670ba4aa5946ec9220e54ad",
+    "H1_annotation_sample2_B.jsonl": "8c11116ce4ade32256517c36a02e068310c8e7864a2ee90c55c438200ad45fe4",
+    "H1_adjudication_sample2.md": "88cd7583aaea7faf077b9f66127686cb5dc7ac547eba44c95c944d25a40da4d4",
+    "H1_agreement_audit_sample2.md": "f4c475cf1e25398df44f8dfb5013c9d8f3675f99f5f2a022a306e004904fd966"
+  },
+  "problems": [],
+  "adjudication": {
+    "fields": 53,
+    "fields_changed": 15,
+    "rows_kept": 341,
+    "rows_dropped": 22,
+    "rows_corrected": 3,
+    "rows_added": 4,
+    "resolved_assertions": 348
+  },
+  "adjudication_changes": [
+    {
+      "field": "Cacng8/E001",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Single zero already used for the first threshold; no second count occurrence."
+        ],
+        [
+          "n_sig",
+          "0",
+          "Single zero already used for the first threshold; no third count occurrence."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Celsr2/E003",
+      "dropped": [
+        [
+          "n_sig",
+          "1",
+          "Alternative of row 2; preserve the source value_text one."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Cyfip1/E006",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Other perturbation: Cyfip2 context."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Glis2/E003",
+      "dropped": [],
+      "corrected": [
+        [
+          "n_sig",
+          "0",
+          {
+            "unit": "rows"
+          }
+        ],
+        [
+          "n_sig",
+          "0",
+          {
+            "unit": "rows"
+          }
+        ]
+      ],
+      "added": []
+    },
+    {
+      "field": "Grik5/E009",
+      "dropped": [
+        [
+          "padj",
+          "1.0",
+          "Aggregate multi-gene FDR; unresolved measured gene."
+        ],
+        [
+          "padj",
+          "1.0",
+          "Aggregate multi-gene FDR; unresolved measured gene."
+        ],
+        [
+          "padj",
+          "1.0",
+          "Shifted alternative; explicit Grik4 FDR is row 7 and Grik5 FDR is row 11."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Nefh/E005",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Single zero already used at the first threshold; do not reuse."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Nkx6-2/E001",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "n_rows",
+          "0"
+        ]
+      ]
+    },
+    {
+      "field": "Pcsk2/E008",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "padj",
+          "1.19e-28"
+        ],
+        [
+          "padj",
+          "2.49e-16"
+        ]
+      ]
+    },
+    {
+      "field": "Peg3/E004",
+      "dropped": [
+        [
+          "n_sig",
+          "1",
+          "Alternative of corrected row 7; preserve source value_text one."
+        ]
+      ],
+      "corrected": [
+        [
+          "n_sig",
+          "one",
+          {
+            "self_inclusion": "unstated"
+          }
+        ]
+      ],
+      "added": []
+    },
+    {
+      "field": "Plxnd1/E001",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Single zero already used at the first threshold; do not reuse."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Smad4/E002",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "min_pval",
+          "0.00366"
+        ]
+      ]
+    },
+    {
+      "field": "Snx10/E002",
+      "dropped": [
+        [
+          "n_sig",
+          "0",
+          "Single zero already used at the first threshold; do not reuse."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Tef/E006",
+      "dropped": [
+        [
+          "n_sig",
+          "zero",
+          "Alternative of row 10; normalize a zero count to 0."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Tpi1/E008",
+      "dropped": [
+        [
+          "logfc",
+          "-1.441",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "padj",
+          "4.43e-32",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "logfc",
+          "-0.227",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "padj",
+          "7.00e-11",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "logfc",
+          "-0.217",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "padj",
+          "5.73e-10",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "logfc",
+          "-0.146",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "padj",
+          "5.00e-04",
+          "Other perturbation: Pgk1 context."
+        ],
+        [
+          "n_sig",
+          "22",
+          "Other perturbation: Pgk1 context."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    },
+    {
+      "field": "Uchl1/E001",
+      "dropped": [
+        [
+          "n_rows",
+          "371818",
+          "Total occurs inside an excluded recurrence clause."
+        ]
+      ],
+      "corrected": [],
+      "added": []
+    }
+  ],
+  "agreement_audit": {
+    "fields": 20,
+    "fields_changed": 0,
+    "rows_kept": 70,
+    "rows_dropped": 0,
+    "rows_corrected": 0,
+    "rows_added": 0,
+    "resolved_assertions": 70,
+    "fields_with_error": 0,
+    "error_rate": 0.0,
+    "wilson_95": [
+      0.0,
+      0.16112515805281938
+    ]
+  },
+  "agreement_audit_changes": [],
+  "dc33_full_review_triggered": false,
+  "agreed_fields_not_audited": 77
+}

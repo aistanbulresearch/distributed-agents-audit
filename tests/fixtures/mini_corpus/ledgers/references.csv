@@ -1,0 +1,5 @@
+target_gene,ref_id,ref_slug,source,source_type,citation,url,description
+Arx,R001,arx_quickgo,QuickGO,database,QuickGO Arx,https://www.ebi.ac.uk/QuickGO/annotations?geneProductId=O35085,d
+Arx,R003,arx_paper,PubMed,pubmed,Arx paper,https://pubmed.ncbi.nlm.nih.gov/11111111/,d
+Psmb4,R001,psmb4_paper,PubMed,pubmed,Psmb4 paper,https://pubmed.ncbi.nlm.nih.gov/22222222/,d
+Safe_target_17,R001,ctrl_ref,PubMed,pubmed,Control paper,https://pubmed.ncbi.nlm.nih.gov/33333333/,d

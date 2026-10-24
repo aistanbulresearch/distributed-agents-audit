@@ -1,0 +1,237 @@
+{
+  "sample": 1,
+  "files": {
+    "A": {
+      "path": "H1_annotation_sample1_A.jsonl",
+      "sha256": "b496a170fe518ede9fde6f9ae4f63ffe6c49c6052d6fef8aa458ee3bac1691c8",
+      "assertions": 657
+    },
+    "B": {
+      "path": "H1_annotation_sample1_B.jsonl",
+      "sha256": "02e5ab2f08e7edf82217b1512cea8f5e5b09a7fb9d2b9b602823450712881824",
+      "assertions": 603
+    }
+  },
+  "format_problems": 0,
+  "owner_checked_excluded": 30,
+  "agreement": {
+    "fields": 120,
+    "fields_fully_agreed": 93,
+    "field_agreement": 0.775,
+    "assertions_a": 534,
+    "assertions_b": 501,
+    "pairs_agreed": 470,
+    "pairs_differing": 7,
+    "only_a": 57,
+    "only_b": 24,
+    "assertion_agreement": 0.8422939068100358
+  },
+  "agreement_label_convention": {
+    "fields": 120,
+    "fields_fully_agreed": 93,
+    "field_agreement": 0.775,
+    "assertions_a": 534,
+    "assertions_b": 501,
+    "pairs_agreed": 470,
+    "pairs_differing": 7,
+    "only_a": 57,
+    "only_b": 24,
+    "assertion_agreement": 0.8422939068100358
+  },
+  "partially_disagreeing": [
+    [
+      "Ap2m1",
+      "E007"
+    ],
+    [
+      "Armc9",
+      "E004"
+    ],
+    [
+      "Brsk2",
+      "E007"
+    ],
+    [
+      "Cdk8",
+      "E004"
+    ],
+    [
+      "Cebpe",
+      "E005"
+    ],
+    [
+      "Cox11",
+      "E002"
+    ],
+    [
+      "Foxl2",
+      "E001"
+    ],
+    [
+      "Frrs1l",
+      "E005"
+    ],
+    [
+      "Glra2",
+      "E008"
+    ],
+    [
+      "Grin2b",
+      "E008"
+    ],
+    [
+      "Il4ra",
+      "E005"
+    ],
+    [
+      "Itpr1",
+      "E007"
+    ],
+    [
+      "Mkx",
+      "E001"
+    ],
+    [
+      "Ncam1",
+      "E003"
+    ],
+    [
+      "Neurod2",
+      "E001"
+    ],
+    [
+      "Pak3",
+      "E002"
+    ],
+    [
+      "Pde1c",
+      "E001"
+    ],
+    [
+      "Pds5a",
+      "E005"
+    ],
+    [
+      "Plcb1",
+      "E004"
+    ],
+    [
+      "Prdm10",
+      "E003"
+    ],
+    [
+      "Ranbp2",
+      "E010"
+    ],
+    [
+      "Sall1",
+      "E002"
+    ],
+    [
+      "Six5",
+      "E001"
+    ],
+    [
+      "St3gal3",
+      "E009"
+    ],
+    [
+      "Tbr1",
+      "E005"
+    ],
+    [
+      "Vps41",
+      "E004"
+    ],
+    [
+      "Zmynd8",
+      "E005"
+    ]
+  ],
+  "agreement_audit": [
+    [
+      "Alx1",
+      "E001"
+    ],
+    [
+      "Arsb",
+      "E001"
+    ],
+    [
+      "Atg5",
+      "E005"
+    ],
+    [
+      "Cep112",
+      "E001"
+    ],
+    [
+      "Chrne",
+      "E006"
+    ],
+    [
+      "Ddhd1",
+      "E005"
+    ],
+    [
+      "Etfa",
+      "E001"
+    ],
+    [
+      "Figla",
+      "E004"
+    ],
+    [
+      "Foxn1",
+      "E003"
+    ],
+    [
+      "Fzd9",
+      "E007"
+    ],
+    [
+      "Gnas",
+      "E010"
+    ],
+    [
+      "Hesx1",
+      "E007"
+    ],
+    [
+      "Lrrtm3",
+      "E001"
+    ],
+    [
+      "Map1b",
+      "E006"
+    ],
+    [
+      "Mark3",
+      "E002"
+    ],
+    [
+      "Med13l",
+      "E001"
+    ],
+    [
+      "Nr2f6",
+      "E004"
+    ],
+    [
+      "Pura",
+      "E008"
+    ],
+    [
+      "Sox11",
+      "E002"
+    ],
+    [
+      "Zfhx2",
+      "E006"
+    ]
+  ],
+  "forms": {
+    "H1_adjudication_sample1.md": "c78f8a98faec07ac43ab584c1de33bcdafcd0bd20819bafd337193a975f63293",
+    "H1_agreement_audit_sample1.md": "7495e1cd60d70b0039d3df780912b472b1f1c4b65a6f95394f6ca216d6d2bc06"
+  }
+}

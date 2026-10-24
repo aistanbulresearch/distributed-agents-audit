@@ -1,0 +1,835 @@
+{
+  "ledgers": {
+    "findings": {
+      "rows": 11343,
+      "columns": [
+        "target_gene",
+        "finding_id",
+        "finding_type",
+        "direction",
+        "confidence",
+        "literature_status",
+        "summary",
+        "why_it_matters",
+        "genes",
+        "n_genes",
+        "comparators",
+        "cell_types",
+        "n_cell_types",
+        "evidence_ids",
+        "ref_ids",
+        "main_caveats"
+      ]
+    },
+    "references": {
+      "rows": 16580,
+      "columns": [
+        "target_gene",
+        "ref_id",
+        "ref_slug",
+        "source",
+        "source_type",
+        "citation",
+        "url",
+        "description"
+      ]
+    },
+    "evidence": {
+      "rows": 18602,
+      "columns": [
+        "target_gene",
+        "evidence_id",
+        "evidence_slug",
+        "cell_type",
+        "genes",
+        "n_genes",
+        "has_genes",
+        "has_cell_type",
+        "statistics",
+        "description"
+      ]
+    }
+  },
+  "classified_findings": {
+    "rows": 2610,
+    "columns": [
+      "candidate_id",
+      "block_id",
+      "finding_id",
+      "set_role",
+      "arm",
+      "actual_response_gene",
+      "report_gene_target",
+      "finding_type",
+      "reported_flag",
+      "summary",
+      "consequence",
+      "literature_claim",
+      "cell_types_json",
+      "comparators_json",
+      "signal_profile_json",
+      "challenge_rationale",
+      "packet_id",
+      "admissibility",
+      "claim_scope",
+      "source_relation",
+      "dataset_informativity",
+      "flag",
+      "flag_label",
+      "confidence",
+      "retrieval_status",
+      "admissibility_reason",
+      "dataset_support_summary",
+      "baseline_or_power_check",
+      "source_supported_edge",
+      "missing_or_conflicting_edge",
+      "supporting_sources_json",
+      "search_summary",
+      "valid_for_primary",
+      "valid_for_sensitivity"
+    ],
+    "rows_by_arm_setrole_validprimary": {
+      "Out-of-screen shuffled | full_corpus | False": 213,
+      "Out-of-screen shuffled | full_corpus | True": 561,
+      "Unshuffled | full_corpus | False": 517,
+      "Unshuffled | full_corpus | True": 488,
+      "Within-screen shuffled | full_corpus | False": 231,
+      "Within-screen shuffled | full_corpus | True": 600
+    },
+    "rows_with_finding_key": 2610,
+    "finding_keys_found_in_ledger": 1529
+  },
+  "heatmap_finding_flags_table2": {
+    "rows": 4987,
+    "rows_by_confidence": {
+      "high": 1519,
+      "low": 2219,
+      "moderate": 1249
+    },
+    "distinct_perturbations": 1092,
+    "finding_id_examples": [
+      "F002",
+      "F003",
+      "F004"
+    ],
+    "keys_found_in_ledger": 1641
+  },
+  "priority_scores_table4": {
+    "rows": 3397,
+    "distinct_genes": 1932,
+    "finding_id_examples": [
+      "F001",
+      "F001",
+      "F004"
+    ],
+    "keys_found_in_ledger": 3392
+  },
+  "runtime_summary_table2": {
+    "runs": [
+      "june_browser_full_run"
+    ],
+    "metrics": [
+      "abstract_or_index_unique_urls",
+      "all_literature_system_error_results",
+      "blocked_open_events",
+      "broader_article_like_unique_urls",
+      "cited_reference_entries__database",
+      "cited_reference_entries__europepmc_index_or_abstract",
+      "cited_reference_entries__other",
+      "cited_reference_entries__pmc_full_text",
+      "cited_reference_entries__preprint",
+      "cited_reference_entries__publisher_or_doi_article",
+      "cited_reference_entries__pubmed_abstract",
+      "cited_reference_entries__search_index",
+      "container_exec_calls",
+      "container_exec_recorded_seconds",
+      "container_exec_timed_results",
+      "container_exec_total_results",
+      "conversation_messages",
+      "empty_or_malformed_reference_urls",
+      "empty_reference_urls",
+      "final_context_tokens",
+      "find_requests",
+      "individual_search_queries",
+      "initial_prompt_tokens",
+      "input_tokens",
+      "input_tokens_without_repeated_history",
+      "inserted_assistant_prefix_tokens",
+      "malformed_reference_json_lines",
+      "missing_or_error_open_results",
+      "nonempty_non_http_reference_urls",
+      "open_requests",
+      "sampling_tokens",
+      "sampling_turns",
+      "search_result_url_events",
+      "strict_full_text_unique_urls",
+      "successful_open_events",
+      "successful_open_events__database",
+      "successful_open_events__europepmc_index_or_abstract",
+      "successful_open_events__other",
+      "successful_open_events__pmc_full_text",
+      "successful_open_events__preprint",
+      "successful_open_events__publisher_or_doi_article",
+      "successful_open_events__pubmed_abstract",
+      "successful_open_events__search_index",
+      "successful_open_urls__database",
+      "successful_open_urls__europepmc_index_or_abstract",
+      "successful_open_urls__other",
+      "successful_open_urls__pmc_full_text",
+      "successful_open_urls__preprint",
+      "successful_open_urls__publisher_or_doi_article",
+      "successful_open_urls__pubmed_abstract",
+      "successful_open_urls__search_index",
+      "tool_response_tokens",
+      "top_level_literature_tool_calls",
+      "total_reference_entries",
+      "unique_normalized_http_reference_urls",
+      "unique_open_result_urls",
+      "unique_reference_urls",
+      "unique_search_result_urls",
+      "unique_successfully_opened_urls",
+      "url_bearing_open_result_events"
+    ]
+  },
+  "survey_pair_texts": {
+    "pairs": 20,
+    "codex_title_has_full_text": 20,
+    "distributed_title_has_full_text": 0,
+    "distributed_title_in_report_all_144": 0
+  },
+  "downstream_fdr_0_1_parquet": {
+    "rows": 135055,
+    "distinct_targets": 893,
+    "distinct_cell_types": 23,
+    "pvals_adj_max": 0.09999995086047556
+  },
+  "holdout_run_files": {
+    "answer.txt": 1632,
+    "query.md": 1632,
+    "trace.md": 1632,
+    "prompt.md": 816,
+    "predictions.csv": 1,
+    "single_agent_predictions.jsonl": 1
+  },
+  "controls": {
+    "distinct_targets": 2046,
+    "control_targets": 100,
+    "control_examples": [
+      "Safe_target_1",
+      "Safe_target_10",
+      "Safe_target_100",
+      "Safe_target_11",
+      "Safe_target_12"
+    ],
+    "control_findings": 448,
+    "screen_perturbations_table3": 1948,
+    "ledger_targets_not_in_table3": [
+      "Cdin1",
+      "Dync2i1",
+      "Katnip"
+    ],
+    "table3_perturbations_not_in_ledger": [
+      "BC052040",
+      "D430042O09Rik",
+      "Safe_target",
+      "Top2b",
+      "Wdr60"
+    ]
+  },
+  "single_agent_refs_n0893": {
+    "seed-017": {
+      "rows": 11,
+      "keys": [
+        "citation",
+        "description",
+        "pmid",
+        "ref_id",
+        "ref_slug",
+        "source",
+        "source_type",
+        "url"
+      ],
+      "source_types": {
+        "review": 2,
+        "pubmed": 9
+      }
+    },
+    "seed-029": {
+      "rows": 11,
+      "keys": [
+        "citation",
+        "description",
+        "pmid",
+        "ref_id",
+        "ref_slug",
+        "source",
+        "source_type",
+        "url"
+      ],
+      "source_types": {
+        "pubmed": 10,
+        "review": 1
+      }
+    },
+    "seed-043": {
+      "rows": 10,
+      "keys": [
+        "citation",
+        "description",
+        "pmid",
+        "ref_id",
+        "ref_slug",
+        "source",
+        "source_type",
+        "url"
+      ],
+      "source_types": {
+        "review": 3,
+        "pubmed": 2,
+        "pmc": 5
+      }
+    }
+  },
+  "distributed_comparator_893": {
+    "targets_per_seed": {
+      "seed_17": 893,
+      "seed_29": 893,
+      "seed_43": 893
+    },
+    "seeds_share_one_target_set": true,
+    "targets_union": 893,
+    "union_targets_with_release_report": 893,
+    "reference_rows": 7558,
+    "rows_with_http_url": 7558,
+    "implied_by_published_711x_of_11": 7821
+  },
+  "literature_comparisons": {
+    "reports": 2046,
+    "reports_with_block": 2046,
+    "rows": 8999,
+    "rows_with_context_match": 8999,
+    "invalid_lines": 0
+  },
+  "snapshots": {
+    "release_reports": 2046,
+    "june": {
+      "reports": 2046,
+      "shared_targets": 2046,
+      "only_in_snapshot": 0,
+      "only_in_release": 0,
+      "identical_text": 1827
+    },
+    "july": {
+      "reports": 2045,
+      "shared_targets": 2045,
+      "only_in_snapshot": 0,
+      "only_in_release": 1,
+      "identical_text": 0
+    }
+  },
+  "url_vocabulary": {
+    "non_http_or_empty": 0,
+    "distinct_hosts": 80,
+    "top_hosts": {
+      "pubmed.ncbi.nlm.nih.gov": 6422,
+      "doi.org": 2301,
+      "ebi.ac.uk": 1312,
+      "string-db.org": 1225,
+      "reactome.org": 1053,
+      "rest.uniprot.org": 916,
+      "uniprot.org": 839,
+      "platform.opentargets.org": 779,
+      "proteinatlas.org": 670,
+      "pmc.ncbi.nlm.nih.gov": 236,
+      "ncbi.nlm.nih.gov": 164,
+      "europepmc.org": 118,
+      "frontiersin.org": 69,
+      "jneurosci.org": 67,
+      "clinicaltrials.gov": 59,
+      "rest.ensembl.org": 54,
+      "informatics.jax.org": 32,
+      "elifesciences.org": 31,
+      "medlineplus.gov": 24,
+      "journals.plos.org": 23,
+      "jci.org": 20,
+      "nature.com": 14,
+      "guidetopharmacology.org": 11,
+      "eutils.ncbi.nlm.nih.gov": 9,
+      "academic.oup.com": 8,
+      "jmg.bmj.com": 8,
+      "cell.com": 7,
+      "mdpi.com": 6,
+      "accessdata.fda.gov": 6,
+      "mygene.info": 6
+    }
+  },
+  "build_module": {
+    "build_dir_exists": false,
+    "gitignore_build_lines": [
+      "build/"
+    ]
+  },
+  "source_policy_tasks": {
+    "src/bioeval/benchmarks/depletion-odd-seed/task.toml": "filtered-literature",
+    "src/bioeval/benchmarks/finding-caveats/task-100.toml": "filtered-literature",
+    "src/bioeval/benchmarks/finding-caveats/task-30.toml": "filtered-literature",
+    "src/bioeval/benchmarks/finding-caveats/task-50-no-literature.toml": "filtered-literature",
+    "src/bioeval/benchmarks/finding-caveats/task-50.toml": "filtered-literature",
+    "src/bioeval/benchmarks/holdout-prediction/deg-count.toml": null,
+    "src/bioeval/benchmarks/holdout-prediction/deg-identity.toml": null,
+    "src/bioeval/benchmarks/literature-flags/task.toml": "filtered-literature"
+  },
+  "differential_expression": {
+    "rows": 6605372,
+    "distinct_targets": 18,
+    "distinct_groups": 23,
+    "target_group_pairs": 391,
+    "rows_per_pair_min_median_max": [
+      16228,
+      16945,
+      17443
+    ],
+    "pvals_adj_min_max": [
+      1.2964615347326146e-31,
+      1.0
+    ],
+    "rows_with_pvals_adj_ge_0.1": 6580584,
+    "groups": [
+      "001 L5-6 IT Glut",
+      "005 L4-5 IT CTX Glut",
+      "007 L2-3 IT CTX Glut",
+      "008 L2-3 IT ENT PPP RSP Glut",
+      "009 L2-3 IT PIR AON ENT Glut",
+      "012 MEA LA CA1 DG Glut",
+      "017 CA3 CA2-FC DG Glut",
+      "022 L5 ET CTX Glut",
+      "027 NP-CT-L6b-OB Glut",
+      "046 CTX-CGE GABA",
+      "052 Pvalb Gaba",
+      "053 Sst Gaba",
+      "054 CNU-MGE GABA",
+      "059 CNU-LGE LSX GABA",
+      "066 CNU-HYa HY GABA",
+      "110 CNU-HYa HY MM Glut",
+      "145 MH-LH TH Glut",
+      "151 TH Prkcd Grin2c Glut",
+      "155 MB Glut",
+      "191 MB P MY GABA",
+      "215 MB Dopa",
+      "217 P MY Pineal Glut",
+      "308 CB GABA"
+    ],
+    "tsc_cb_gaba": {
+      "Tsc1 / 308 CB GABA": {
+        "rows": 16945,
+        "n_pert_matched": [
+          74
+        ],
+        "n_ctrl_matched": [
+          8277
+        ]
+      },
+      "Tsc2 / 308 CB GABA": {
+        "rows": 16945,
+        "n_pert_matched": [
+          81
+        ],
+        "n_ctrl_matched": [
+          8277
+        ]
+      }
+    }
+  },
+  "evidence_statistics": {
+    "rows": 18602,
+    "empty": 0,
+    "rows_without_cell_type": 12570,
+    "rows_matching_family": {
+      "logfc": 8930,
+      "fdr_padj": 13455,
+      "nominal_p": 9999,
+      "cell_counts": 13330,
+      "deg_counts": 0,
+      "correlation": 3367,
+      "cosine": 105,
+      "rank": 1185
+    },
+    "examples": [
+      "0 of 371,818 Gsdme-perturbation rows had names == Gsdme.",
+      "21 prespecified UPR or ER-proteostasis markers were tested in the Atl1 signatures; none had FDR<0.05. Hspa5 minimum nominal p=0.0849; Ddit3 minimum p=0.0444 with FDR=1.0; Xbp1 minimum p=0.0491 with FDR=1.0.",
+      "Within the 21 Hk1-overlap cell types, Pfkm, Pgk1, and Gpi1 target transcripts were negative in 21/21 signatures each; target rows had FDR<0.05 in 6/21 Pfkm, 12/21 Pgk1, and 2/21 Gpi1 signatures, with median logFC -0.511, -1.052, and -0.406 respectively.",
+      "1/17443 genes in the 155 MB Glut contrast had FDR<0.05 and that gene was Rusc2; the top non-target by FDR was Atp5b, logFC 0.3246, p=7.86e-6, FDR=0.0686; the next strongest negative non-target was Ggps1, logFC -0.4904, p=7.33e-5, FDR=0.4259.",
+      "37 perturbed cells versus 7,679 controls; Nbea logFC -0.00277, nominal P=0.924, rank 12,124 of 17,012, FDR=1.0; nevertheless 8 genes had P<0.001 and 89 had P<0.01; Syp logFC -0.294, nominal P=0.00447, FDR=1.0.",
+      "Full-genome Pearson scans in the three most suggestive Fosl2 classes gave weak non-self neighbors: in 054 CNU-MGE GABA, top r=0.111 and bottom r=-0.080; in 155 MB Glut, top r=0.067 and bottom r=-0.049; in 308 CB GABA, top r=0.236 and bottom r=-0.213."
+    ]
+  },
+  "released_tables": {
+    "media-2": {
+      "Claim-gene findings": {
+        "rows": 72,
+        "header": [
+          "Claim",
+          "Manuscript figure",
+          "Manuscript claim",
+          "Gene",
+          "Flag",
+          "Supporting findings"
+        ]
+      }
+    },
+    "media-3": {
+      "Heatmap Finding Flags": {
+        "rows": 4988,
+        "header": [
+          "perturbation",
+          "finding_id",
+          "flag",
+          "confidence",
+          "finding_summary",
+          "finding_consequence",
+          "summary",
+          "finding_type",
+          "cell_types",
+          "reference_citations",
+          "reference_urls"
+        ]
+      },
+      "Runtime Summary Statistics": {
+        "rows": 61,
+        "header": [
+          "run",
+          "section",
+          "metric",
+          "unit",
+          "n",
+          "missing_n",
+          "sum",
+          "mean",
+          "median",
+          "min",
+          "max",
+          "stddev_population",
+          "variance_population",
+          "stddev_sample",
+          "variance_sample"
+        ]
+      },
+      "Scaling Perturbation Splits": {
+        "rows": 894,
+        "header": [
+          "seed_17",
+          "seed_29",
+          "seed_43"
+        ]
+      },
+      "Shuffle Design": {
+        "rows": 151,
+        "header": [
+          "original_gene",
+          "original_deg_calls_across_cell_types_padj_lt_0_1",
+          "original_deg_positive_cell_types",
+          "original_max_cell_type_degs_padj_lt_0_1",
+          "original_deg_profile_padj_lt_0_1",
+          "within_screen_replacement",
+          "within_replacement_deg_calls_across_cell_types_padj_lt_0_1",
+          "within_replacement_deg_positive_cell_types",
+          "within_replacement_max_cell_type_degs_padj_lt_0_1",
+          "within_replacement_deg_profile_padj_lt_0_1",
+          "out_of_screen_replacement",
+          "unshuffled_agree",
+          "unshuffled_disagree",
+          "unshuffled_inferred",
+          "unshuffled_no_literature",
+          "within_screen_agree",
+          "within_screen_disagree",
+          "within_screen_inferred",
+          "within_screen_no_literature",
+          "out_of_screen_agree",
+          "out_of_screen_disagree",
+          "out_of_screen_inferred",
+          "out_of_screen_no_literature",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None"
+        ]
+      },
+      "Shuffle Findings": {
+        "rows": 1650,
+        "header": [
+          "arm",
+          "actual_response_gene",
+          "report_gene_target",
+          "finding_id",
+          "finding_type",
+          "summary",
+          "consequence",
+          "literature_claim",
+          "flag",
+          "confidence",
+          "cell_types",
+          "reference_citations"
+        ]
+      }
+    },
+    "media-4": {
+      "holdout design": {
+        "rows": 274,
+        "header": [
+          "perturbation",
+          "held_out_from",
+          "cluster_groups",
+          "numi_effect_direction",
+          "depletion_holdout",
+          "no_significant_effect_holdout"
+        ]
+      },
+      "holdout predictions": {
+        "rows": 273,
+        "header": [
+          "target_name",
+          "n_degs",
+          "Distributed Agents rep1 predicted_n_degs",
+          "Distributed Agents rep2 predicted_n_degs",
+          "Distributed Agents rep3 predicted_n_degs",
+          "Codex rep1 predicted_n_degs",
+          "Codex rep2 predicted_n_degs",
+          "Codex rep3 predicted_n_degs"
+        ]
+      },
+      "depletion rank and predictions": {
+        "rows": 1949,
+        "header": [
+          "Depletion rank",
+          "Perturbation",
+          "Fisher odds ratio",
+          "Fisher p-value",
+          "Fisher BH-adjusted p-value",
+          "Total DEG responses (adjusted p-value < 0.1)",
+          "Thalamic DEG responses (adjusted p-value < 0.1)",
+          "Odd-seed task status",
+          "Distributed Agents R1 predicted rank",
+          "Distributed Agents R2 predicted rank",
+          "Distributed Agents R3 predicted rank",
+          "Codex R1 predicted rank",
+          "Codex R2 predicted rank",
+          "Codex R3 predicted rank",
+          "Direct Claude R1 predicted rank",
+          "Direct Claude R2 predicted rank",
+          "Direct Claude R3 predicted rank",
+          "BioMNI R1 predicted rank",
+          "BioMNI R2 predicted rank",
+          "BioMNI R3 predicted rank",
+          "DepMap 22Q2 predicted rank",
+          "DepMap 26Q1 predicted rank",
+          "Top DEG (TH FDR<0.05) predicted rank",
+          "Total DEG (all FDR<0.1) predicted rank"
+        ]
+      },
+      "predictions": {
+        "rows": 51,
+        "header": [
+          "Prediction rank",
+          "Distributed Agents R1",
+          "Distributed Agents R2",
+          "Distributed Agents R3",
+          "Codex R1",
+          "Codex R2",
+          "Codex R3",
+          "BioMNI R1",
+          "BioMNI R2",
+          "BioMNI R3",
+          "DepMap 22Q2",
+          "Top DEG (TH FDR<0.05)",
+          "Total DEG (all FDR<0.1)"
+        ]
+      },
+      "prediction_summary": {
+        "rows": 13,
+        "header": [
+          "Method",
+          "Run",
+          "Workbook label",
+          "Predictions",
+          "Held-out hits (of 50)",
+          "Actual rank 1-10",
+          "Actual rank 11-25",
+          "Actual rank 26-50",
+          "Actual rank 51-100",
+          "Actual rank 101-200",
+          "Actual rank >200",
+          "Median actual depletion rank"
+        ]
+      }
+    },
+    "media-5": {
+      "analysis_table": {
+        "rows": 3398,
+        "header": [
+          "gene",
+          "finding_id",
+          "finding_type",
+          "score",
+          "total_degs_padj_0.05",
+          "total_degs_padj_0.1",
+          "n_cell_types",
+          "cell_types",
+          "full_finding_text"
+        ]
+      }
+    },
+    "media-6": {
+      "Bucket summary": {
+        "rows": 5,
+        "header": [
+          "bucket",
+          "bucket_description",
+          "source",
+          "n_findings",
+          "n_evaluations",
+          "mean_confidence",
+          "mean_novelty",
+          "mean_reasoning_support",
+          "mean_priority",
+          "mean_composite"
+        ]
+      },
+      "Finding summary": {
+        "rows": 61,
+        "header": [
+          "finding_id",
+          "source",
+          "bucket",
+          "bucket_description",
+          "finding_title",
+          "core_idea",
+          "significance",
+          "prior_expectation",
+          "support_and_caveats",
+          "research_community",
+          "agent_rank",
+          "rank_denominator",
+          "agent_novelty_grade",
+          "agent_support_grade",
+          "agent_priority_grade",
+          "n_reviewers",
+          "n_confidence",
+          "mean_confidence",
+          "sd_confidence",
+          "n_novelty",
+          "mean_novelty",
+          "sd_novelty",
+          "n_reasoning_support",
+          "mean_reasoning_support",
+          "sd_reasoning_support",
+          "n_priority",
+          "mean_priority",
+          "sd_priority",
+          "n_composite",
+          "mean_composite",
+          "sd_composite"
+        ]
+      },
+      "Part I ratings": {
+        "rows": 181,
+        "header": [
+          "reviewer_id",
+          "survey_packet",
+          "item_position",
+          "finding_id",
+          "source",
+          "bucket",
+          "bucket_description",
+          "source_run",
+          "agent_rank",
+          "rank_denominator",
+          "finding_title",
+          "confidence_score",
+          "novelty_score",
+          "novelty_cannot_assess",
+          "reasoning_support_score",
+          "support_cannot_assess",
+          "priority_score",
+          "priority_cannot_assess",
+          "composite_score",
+          "main_reason",
+          "excited_community",
+          "followup_programs"
+        ]
+      },
+      "Pair summary": {
+        "rows": 21,
+        "header": [
+          "comparison_id",
+          "comparison_class",
+          "target",
+          "codex_source_run",
+          "codex_rank",
+          "n_responses",
+          "n_scored",
+          "mean_Distributed Agents_preference",
+          "sd_Distributed Agents_preference",
+          "n_prefer_Distributed Agents",
+          "n_tie",
+          "n_prefer_codex",
+          "n_cannot_assess",
+          "n_Distributed Agents_shown_first",
+          "n_codex_shown_first",
+          "codex_title",
+          "Distributed Agents_title"
+        ]
+      },
+      "Part II ratings": {
+        "rows": 61,
+        "header": [
+          "reviewer_id",
+          "survey_packet",
+          "item_position",
+          "comparison_id",
+          "comparison_class",
+          "target",
+          "codex_source_run",
+          "codex_rank",
+          "display_A_source",
+          "display_B_source",
+          "raw_display_preference_score",
+          "Distributed Agents_preference_score",
+          "preference_category",
+          "codex_title",
+          "Distributed Agents_title"
+        ]
+      },
+      "Data dictionary": {
+        "rows": 66,
+        "header": [
+          "sheet",
+          "column",
+          "type",
+          "definition"
+        ]
+      }
+    }
+  },
+  "survey": {
+    "findings_rows": 60,
+    "findings_by_source": {
+      "distributed_agents": 40,
+      "codex": 20
+    },
+    "comparisons_rows": 20,
+    "comparison_columns": [
+      "comparison_id",
+      "comparison_class",
+      "target",
+      "codex_source_run",
+      "codex_rank",
+      "codex_title",
+      "distributed_agents_title"
+    ]
+  },
+  "other_reference_files": []
+}

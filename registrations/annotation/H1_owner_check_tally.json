@@ -1,0 +1,239 @@
+{
+ "fields": 30,
+ "totals": {
+  "missed_rows": 15,
+  "correct": 82,
+  "wrong": 20,
+  "conditional": 22
+ },
+ "per_field": [
+  {
+   "field": 1,
+   "target_gene": "Akap9",
+   "evidence_id": "E010",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 2,
+   "target_gene": "Amfr",
+   "evidence_id": "E003",
+   "correct": 6,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 3,
+   "target_gene": "Arih1",
+   "evidence_id": "E008",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 4,
+   "target_gene": "Atf6",
+   "evidence_id": "E006",
+   "wrong": 20,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 5,
+   "target_gene": "Atp2b2",
+   "evidence_id": "E007",
+   "missed_rows": 8,
+   "has_scope_note": true
+  },
+  {
+   "field": 6,
+   "target_gene": "Atp6v1b2",
+   "evidence_id": "E002",
+   "correct": 23,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 7,
+   "target_gene": "Bin1",
+   "evidence_id": "E001",
+   "correct": 1,
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 8,
+   "target_gene": "Bmpr2",
+   "evidence_id": "E001",
+   "correct": 1,
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 9,
+   "target_gene": "Casr",
+   "evidence_id": "E007",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 10,
+   "target_gene": "Cep85l",
+   "evidence_id": "E005",
+   "conditional": 16,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 11,
+   "target_gene": "Chrna2",
+   "evidence_id": "E005",
+   "correct": 4,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 12,
+   "target_gene": "Dlx5",
+   "evidence_id": "E006",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 13,
+   "target_gene": "Eif4h",
+   "evidence_id": "E010",
+   "missed_rows": 2,
+   "has_scope_note": false
+  },
+  {
+   "field": 14,
+   "target_gene": "Glrb",
+   "evidence_id": "E006",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 15,
+   "target_gene": "Gpr162",
+   "evidence_id": "E007",
+   "correct": 10,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 16,
+   "target_gene": "Hdac5",
+   "evidence_id": "E009",
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 17,
+   "target_gene": "Htr1a",
+   "evidence_id": "E005",
+   "missed_rows": 1,
+   "has_scope_note": true
+  },
+  {
+   "field": 18,
+   "target_gene": "Il1rapl1",
+   "evidence_id": "E014",
+   "conditional": 1,
+   "correct": 3,
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 19,
+   "target_gene": "Itm2b",
+   "evidence_id": "E006",
+   "conditional": 4,
+   "missed_rows": 2,
+   "has_scope_note": false
+  },
+  {
+   "field": 20,
+   "target_gene": "Mboat7",
+   "evidence_id": "E003",
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 21,
+   "target_gene": "Mttp",
+   "evidence_id": "E004",
+   "correct": 13,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 22,
+   "target_gene": "Nefl",
+   "evidence_id": "E001",
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 23,
+   "target_gene": "Nfic",
+   "evidence_id": "E011",
+   "correct": 6,
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 24,
+   "target_gene": "Nobox",
+   "evidence_id": "E002",
+   "correct": 4,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 25,
+   "target_gene": "Paqr8",
+   "evidence_id": "E003",
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 26,
+   "target_gene": "Pde1c",
+   "evidence_id": "E004",
+   "missed_rows": 1,
+   "has_scope_note": false
+  },
+  {
+   "field": 27,
+   "target_gene": "Plxnc1",
+   "evidence_id": "E002",
+   "correct": 6,
+   "conditional": 1,
+   "missed_rows": 0,
+   "has_scope_note": false
+  },
+  {
+   "field": 28,
+   "target_gene": "Plxnc1",
+   "evidence_id": "E006",
+   "correct": 4,
+   "missed_rows": 0,
+   "has_scope_note": true
+  },
+  {
+   "field": 29,
+   "target_gene": "Rpgrip1l",
+   "evidence_id": "E006",
+   "correct": 1,
+   "missed_rows": 1,
+   "has_scope_note": false
+  },
+  {
+   "field": 30,
+   "target_gene": "Stard7",
+   "evidence_id": "E008",
+   "missed_rows": 0,
+   "has_scope_note": false
+  }
+ ]
+}

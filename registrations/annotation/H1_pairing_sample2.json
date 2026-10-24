@@ -1,0 +1,341 @@
+{
+  "sample": 2,
+  "files": {
+    "A": {
+      "path": "H1_annotation_sample2_A.jsonl",
+      "sha256": "62c2a635168e1d6fe34b02dbba5dccd6a112c343d670ba4aa5946ec9220e54ad",
+      "assertions": 701
+    },
+    "B": {
+      "path": "H1_annotation_sample2_B.jsonl",
+      "sha256": "8c11116ce4ade32256517c36a02e068310c8e7864a2ee90c55c438200ad45fe4",
+      "assertions": 717
+    }
+  },
+  "format_problems": 0,
+  "owner_checked_excluded": 0,
+  "agreement": {
+    "fields": 150,
+    "fields_fully_agreed": 97,
+    "field_agreement": 0.6466666666666666,
+    "assertions_a": 701,
+    "assertions_b": 717,
+    "pairs_agreed": 592,
+    "pairs_differing": 98,
+    "only_a": 11,
+    "only_b": 27,
+    "assertion_agreement": 0.8131868131868132
+  },
+  "agreement_label_convention": {
+    "fields": 150,
+    "fields_fully_agreed": 132,
+    "field_agreement": 0.88,
+    "assertions_a": 701,
+    "assertions_b": 717,
+    "pairs_agreed": 688,
+    "pairs_differing": 2,
+    "only_a": 11,
+    "only_b": 27,
+    "assertion_agreement": 0.945054945054945
+  },
+  "partially_disagreeing": [
+    [
+      "Acox1",
+      "E005"
+    ],
+    [
+      "Ahrr",
+      "E002"
+    ],
+    [
+      "Atp6v1a",
+      "E002"
+    ],
+    [
+      "Bmpr1b",
+      "E005"
+    ],
+    [
+      "Brd4",
+      "E002"
+    ],
+    [
+      "Cacng8",
+      "E001"
+    ],
+    [
+      "Cd80",
+      "E004"
+    ],
+    [
+      "Cdin1",
+      "E004"
+    ],
+    [
+      "Celsr2",
+      "E003"
+    ],
+    [
+      "Crlf1",
+      "E002"
+    ],
+    [
+      "Cyfip1",
+      "E006"
+    ],
+    [
+      "Ehmt1",
+      "E011"
+    ],
+    [
+      "Etv6",
+      "E004"
+    ],
+    [
+      "Gfap",
+      "E001"
+    ],
+    [
+      "Glis2",
+      "E003"
+    ],
+    [
+      "Gria3",
+      "E005"
+    ],
+    [
+      "Grik5",
+      "E009"
+    ],
+    [
+      "Htr6",
+      "E002"
+    ],
+    [
+      "Kcnj6",
+      "E001"
+    ],
+    [
+      "Kdm4b",
+      "E004"
+    ],
+    [
+      "Kdm5b",
+      "E002"
+    ],
+    [
+      "Kdm6a",
+      "E002"
+    ],
+    [
+      "Lpar6",
+      "E002"
+    ],
+    [
+      "Mecr",
+      "E005"
+    ],
+    [
+      "Mest",
+      "E007"
+    ],
+    [
+      "Nefh",
+      "E005"
+    ],
+    [
+      "Nf1",
+      "E002"
+    ],
+    [
+      "Nkx6-2",
+      "E001"
+    ],
+    [
+      "Nr1h2",
+      "E001"
+    ],
+    [
+      "Pcsk2",
+      "E008"
+    ],
+    [
+      "Peg3",
+      "E004"
+    ],
+    [
+      "Pkd1",
+      "E002"
+    ],
+    [
+      "Plxnd1",
+      "E001"
+    ],
+    [
+      "Pou6f1",
+      "E004"
+    ],
+    [
+      "Prdm5",
+      "E002"
+    ],
+    [
+      "Rp9",
+      "E003"
+    ],
+    [
+      "Rpgr",
+      "E006"
+    ],
+    [
+      "Satb2",
+      "E002"
+    ],
+    [
+      "Six1",
+      "E003"
+    ],
+    [
+      "Smad4",
+      "E002"
+    ],
+    [
+      "Snx10",
+      "E002"
+    ],
+    [
+      "Tbx2",
+      "E002"
+    ],
+    [
+      "Tef",
+      "E006"
+    ],
+    [
+      "Tpi1",
+      "E008"
+    ],
+    [
+      "Trpm3",
+      "E006"
+    ],
+    [
+      "Tspan12",
+      "E002"
+    ],
+    [
+      "Tuba1a",
+      "E007"
+    ],
+    [
+      "Ubr1",
+      "E001"
+    ],
+    [
+      "Uchl1",
+      "E001"
+    ],
+    [
+      "Vps37a",
+      "E003"
+    ],
+    [
+      "Zfat",
+      "E003"
+    ],
+    [
+      "Zfp322a",
+      "E003"
+    ],
+    [
+      "Zic1",
+      "E005"
+    ]
+  ],
+  "agreement_audit": [
+    [
+      "Bmpr2",
+      "E008"
+    ],
+    [
+      "Cic",
+      "E011"
+    ],
+    [
+      "Cux1",
+      "E006"
+    ],
+    [
+      "Epm2a",
+      "E004"
+    ],
+    [
+      "Fam120a",
+      "E010"
+    ],
+    [
+      "Gfpt1",
+      "E011"
+    ],
+    [
+      "Gfra1",
+      "E009"
+    ],
+    [
+      "Gpr158",
+      "E008"
+    ],
+    [
+      "Kcnc2",
+      "E001"
+    ],
+    [
+      "Minar2",
+      "E007"
+    ],
+    [
+      "Nefl",
+      "E009"
+    ],
+    [
+      "Ogfrl1",
+      "E006"
+    ],
+    [
+      "Peg3",
+      "E003"
+    ],
+    [
+      "Ptch2",
+      "E003"
+    ],
+    [
+      "Sptb",
+      "E003"
+    ],
+    [
+      "Suco",
+      "E010"
+    ],
+    [
+      "Tsc1",
+      "E011"
+    ],
+    [
+      "Ufc1",
+      "E007"
+    ],
+    [
+      "Vps13a",
+      "E004"
+    ],
+    [
+      "Ywhae",
+      "E010"
+    ]
+  ],
+  "forms": {
+    "H1_adjudication_sample2.md": "33061d9d5e7a689388b200e119cae1d0be03dc7a33601911985be529210bc5d8",
+    "H1_agreement_audit_sample2.md": "0638d04175d472663201899351c1d148c1a63269bb4002cab94a70a8adf41b9f"
+  }
+}

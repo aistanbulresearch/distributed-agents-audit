@@ -1,0 +1,213 @@
+{
+  "sample": 1,
+  "inputs": {
+    "H1_annotation_sample1_A.jsonl": "b496a170fe518ede9fde6f9ae4f63ffe6c49c6052d6fef8aa458ee3bac1691c8",
+    "H1_annotation_sample1_B.jsonl": "02e5ab2f08e7edf82217b1512cea8f5e5b09a7fb9d2b9b602823450712881824",
+    "H1_agreed_review_sample1_filled.md": "5f9d40fb56b5f1e25939b10816251bbb9fa2db469639b9e1555faad9e010552a"
+  },
+  "problems": [],
+  "review": {
+    "fields": 73,
+    "fields_changed": 4,
+    "rows_kept": 338,
+    "rows_dropped": 0,
+    "rows_corrected": 0,
+    "rows_added": 41,
+    "resolved_assertions": 379,
+    "fields_with_error": 4
+  },
+  "review_changes": [
+    {
+      "field": "Hspd1/E002",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "score",
+          "-3.393"
+        ],
+        [
+          "logfc",
+          "-0.564"
+        ],
+        [
+          "pval",
+          "0.000691"
+        ],
+        [
+          "padj",
+          "1.0"
+        ],
+        [
+          "score",
+          "-2.566"
+        ],
+        [
+          "logfc",
+          "-0.899"
+        ],
+        [
+          "pval",
+          "0.0103"
+        ],
+        [
+          "score",
+          "-2.512"
+        ],
+        [
+          "logfc",
+          "-0.897"
+        ],
+        [
+          "pval",
+          "0.0120"
+        ],
+        [
+          "score",
+          "-2.468"
+        ],
+        [
+          "logfc",
+          "-0.567"
+        ],
+        [
+          "pval",
+          "0.0136"
+        ]
+      ]
+    },
+    {
+      "field": "Kmt2e/E005",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "logfc",
+          "+0.107"
+        ],
+        [
+          "padj",
+          "0.0219"
+        ],
+        [
+          "logfc",
+          "+0.162"
+        ],
+        [
+          "padj",
+          "0.0533"
+        ],
+        [
+          "logfc",
+          "+0.182"
+        ],
+        [
+          "padj",
+          "0.110"
+        ],
+        [
+          "logfc",
+          "+0.287"
+        ],
+        [
+          "padj",
+          "0.0644"
+        ],
+        [
+          "logfc",
+          "+0.201"
+        ],
+        [
+          "padj",
+          "0.0310"
+        ],
+        [
+          "logfc",
+          "+0.261"
+        ],
+        [
+          "padj",
+          "0.193"
+        ]
+      ]
+    },
+    {
+      "field": "Lrch1/E002",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "score",
+          "-2.320"
+        ],
+        [
+          "logfc",
+          "-0.150"
+        ],
+        [
+          "pval",
+          "0.0203"
+        ],
+        [
+          "score",
+          "-2.199"
+        ],
+        [
+          "logfc",
+          "-0.458"
+        ],
+        [
+          "pval",
+          "0.0279"
+        ],
+        [
+          "score",
+          "-1.985"
+        ],
+        [
+          "logfc",
+          "-0.377"
+        ],
+        [
+          "pval",
+          "0.0472"
+        ],
+        [
+          "score",
+          "-1.961"
+        ],
+        [
+          "logfc",
+          "-0.398"
+        ],
+        [
+          "pval",
+          "0.0499"
+        ],
+        [
+          "score",
+          "-1.909"
+        ],
+        [
+          "logfc",
+          "-0.413"
+        ],
+        [
+          "pval",
+          "0.0563"
+        ]
+      ]
+    },
+    {
+      "field": "Mafb/E003",
+      "dropped": [],
+      "corrected": [],
+      "added": [
+        [
+          "padj",
+          "0.796"
+        ]
+      ]
+    }
+  ]
+}
