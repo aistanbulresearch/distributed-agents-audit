@@ -1,0 +1,156 @@
+{
+ "sample": 1,
+ "vocabulary": {
+  "reference_names": 17994,
+  "development_names": 17994,
+  "only_reference": 0,
+  "only_development": 0
+ },
+ "n_annotated": 644,
+ "n_extracted": 668,
+ "n_pairs": 519,
+ "recall": [
+  0.8059006211180124,
+  0.7223883776414451,
+  0.8756392890920319
+ ],
+ "precision": [
+  0.7769461077844312,
+  0.6822411794537419,
+  0.8594712371683775
+ ],
+ "binding_accuracy": [
+  0.9826589595375722,
+  0.9653763117171442,
+  0.9949507575757576
+ ],
+ "recall_by_type": {
+  "D": 0.2857142857142857,
+  "B": 0.7906976744186046,
+  "A": 0.8733624454148472,
+  "A'": 1.0,
+  "C": 0.5423728813559322,
+  "E": 0.8333333333333334
+ },
+ "types_checked": [
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "extraction_errors": 158,
+ "misbound_pairs": 9,
+ "disagreements": [
+  {
+   "row": [
+    "Fth1",
+    "E003"
+   ],
+   "value_text": "-1.360",
+   "fields": [
+    "gene"
+   ]
+  },
+  {
+   "row": [
+    "Fth1",
+    "E003"
+   ],
+   "value_text": "0.0351",
+   "fields": [
+    "gene"
+   ]
+  },
+  {
+   "row": [
+    "Il1rapl1",
+    "E014"
+   ],
+   "value_text": "0.176",
+   "fields": [
+    "gene",
+    "scope"
+   ]
+  },
+  {
+   "row": [
+    "Itm2b",
+    "E006"
+   ],
+   "value_text": "0.0214",
+   "fields": [
+    "quantity",
+    "gene",
+    "scope"
+   ]
+  },
+  {
+   "row": [
+    "Itm2b",
+    "E006"
+   ],
+   "value_text": "0.0529",
+   "fields": [
+    "quantity",
+    "gene",
+    "scope"
+   ]
+  },
+  {
+   "row": [
+    "Mark3",
+    "E002"
+   ],
+   "value_text": "355,046",
+   "fields": [
+    "quantity",
+    "threshold_quantity",
+    "threshold_relation",
+    "threshold_text"
+   ]
+  },
+  {
+   "row": [
+    "Ncam1",
+    "E003"
+   ],
+   "value_text": "371796",
+   "fields": [
+    "quantity",
+    "threshold_quantity",
+    "threshold_relation",
+    "threshold_text"
+   ]
+  },
+  {
+   "row": [
+    "Nobox",
+    "E002"
+   ],
+   "value_text": "0",
+   "fields": [
+    "cell_type",
+    "scope"
+   ]
+  },
+  {
+   "row": [
+    "Nobox",
+    "E002"
+   ],
+   "value_text": "134",
+   "fields": [
+    "cell_type",
+    "scope"
+   ]
+  }
+ ],
+ "passes": false,
+ "guard_receipt": {
+  "snapshot": "b400d491e41692418c7bb586c796bcbb74e2b088",
+  "visit_date": "2026-10-24T02:10:40.908000+00:00",
+  "release": "d6aa7761b4d4a22eab2e38f5bb5968bcfb459945",
+  "commit": "7e04da3507c9fa915881d65eb52b2e547f750303",
+  "tag_date": "2026-10-24T05:07:16+03:00"
+ }
+}

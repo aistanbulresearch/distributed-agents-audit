@@ -1,0 +1,25 @@
+{
+ "targets": 18,
+ "rows_upstream": 6605372,
+ "rows_reference": 6605372,
+ "duplicate_keys_upstream": 0,
+ "duplicate_keys_reference": 0,
+ "rows_joined": 6605372,
+ "keys_only_upstream": 0,
+ "keys_only_reference": 0,
+ "n_pert_matched_unequal_rows": 0,
+ "n_ctrl_matched_unequal_rows": 0,
+ "logfoldchanges_agreement": 1.0,
+ "pvals_agreement": 1.0,
+ "pvals_adj_agreement": 1.0,
+ "scores_agreement": 1.0,
+ "all_value_columns_agreement": 1.0,
+ "passes": true,
+ "guard_receipt": {
+  "snapshot": "b400d491e41692418c7bb586c796bcbb74e2b088",
+  "visit_date": "2026-10-24T02:10:40.908000+00:00",
+  "release": "d6aa7761b4d4a22eab2e38f5bb5968bcfb459945",
+  "commit": "7e04da3507c9fa915881d65eb52b2e547f750303",
+  "tag_date": "2026-10-24T05:07:16+03:00"
+ }
+}
