@@ -23,9 +23,9 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
-from audit.lib import corpus, paths
+from audit.lib import corpus, h1_extract, h1_extract_v2, paths
 from audit.lib.freeze_check import FreezeClaim, verify_freeze
-from audit.lib.h1_extract import Vocabulary, extract
+from audit.lib.h1_extract import Vocabulary
 from audit.lib.h1_quality import (
     Annotated,
     evaluate,
@@ -158,7 +158,18 @@ def load_key(path: Path) -> dict[tuple[str, str], list[Annotated]]:
     return key
 
 
-def gate(sample: int = 1) -> dict:
+EXTRACTORS = {"v1": h1_extract, "v2": h1_extract_v2}
+
+
+def gate(sample: int = 1, version: str = "v1") -> dict:
+    """Section 5. ``v1`` is the frozen extractor; ``v2`` is the single pre-registered retry
+    (registrations/H1_deviations.md), evaluated once, on sample 2 only."""
+    if version == "v2" and sample != 2:
+        raise SystemExit("the retry extractor is evaluated on sample 2 only")
+    out = OUT / f"line_h1_gate_sample{sample}_{version}.json"
+    if version == "v2" and out.exists():
+        raise SystemExit("the sample-2 evaluation has already run; there is no further retry")
+    extract = EXTRACTORS[version].extract
     vocab, vocab_info = vocabulary()
     rows = ledger()
     key = load_key(REG / f"H1_annotation_sample{sample}.jsonl")
@@ -171,7 +182,7 @@ def gate(sample: int = 1) -> dict:
     report = evaluate(annotated, extracted)
     intervals = gate_intervals(report)
     return {
-        "sample": sample, "vocabulary": vocab_info,
+        "sample": sample, "extractor": version, "vocabulary": vocab_info,
         "n_annotated": report.n_annotated, "n_extracted": report.n_extracted,
         "n_pairs": report.n_pairs,
         "recall": intervals["recall"], "precision": intervals["precision"],
@@ -193,11 +204,13 @@ def main() -> None:
     if stage == "equivalence":
         result = equivalence()
     elif stage == "gate":
-        result = gate(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
+        result = gate(int(sys.argv[2]) if len(sys.argv) > 2 else 1,
+                      sys.argv[3] if len(sys.argv) > 3 else "v1")
     else:
         sys.exit(f"unknown stage {stage!r}")
     result["guard_receipt"] = receipt
-    write(stage if stage != "gate" else f"gate_sample{result['sample']}", result)
+    write(stage if stage != "gate" else f"gate_sample{result['sample']}_{result['extractor']}",
+          result)
     logger.info("%s", json.dumps({k: v for k, v in result.items()
                                   if k not in ("disagreements", "guard_receipt")}))
 
