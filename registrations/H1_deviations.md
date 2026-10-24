@@ -65,7 +65,11 @@ again, H1's primary measure is reported as inconclusive. There is no further ret
 - Adversarial review round 17 led to four changes before publication: a target-transcript
   binding across sentences was removed (it went beyond section 3), elided counts inherit
   their antecedent's restriction, the single attempt is enforced, and the evaluation is bound
-  to the published retry code (below).
+  to the published retry code (below). Round 18 found no high-severity issue; its two
+  medium findings were fixed with synthetic regressions: an elided count takes its nearest
+  preceding count as antecedent (unit and restriction), and a sentence that returns to the
+  target's own perturbation (`<Target> perturbation/knockout/KO`, `<Target>:`) is not
+  excluded because it names a gene that led an earlier other-perturbation sentence.
 
 **Frozen for the evaluation.** The retry is bound like the freeze. The manifest
 `registrations/H1_retry.json` (written by `audit/scripts/h1_retry_manifest.py`) lists the

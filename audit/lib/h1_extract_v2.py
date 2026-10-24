@@ -255,10 +255,18 @@ class _Context:
                 flagged.add((a, b))
                 if gene:
                     leads.add(gene)
+            elif self.names_target_context(self.masked[a:b]):
+                continue  # the text switches back to the target's own perturbation
             elif any(re.search(rf"(?<![A-Za-z0-9]){re.escape(g)}(?![a-z0-9])",
                                self.masked[a:b]) for g in leads):
                 flagged.add((a, b))
         return flagged
+
+    def names_target_context(self, text: str) -> bool:
+        """``<Target> perturbation/perturbed/knockout/KO`` or a ``<Target>:`` heading."""
+        t = re.escape(self.target)
+        return bool(re.search(
+            rf"(?i)(?<![A-Za-z0-9]){t}(?:[\s-]perturb\w*|\s+knockout\b|[\s-]KO\b|\s*:)", text))
 
     def cell(self, sent: tuple[int, int], pos: int,
              inherit: bool) -> tuple[str | None, str | None]:
@@ -297,7 +305,7 @@ class _Context:
         clause = self.masked[c0:c1]
         if any(p.search(clause) for p in _RECURRENCE):
             return "recurrence"
-        names_target = re.search(rf"(?i)\b{re.escape(self.target)}[\s-]perturb", clause)
+        names_target = self.names_target_context(clause)
         if (self.other_text or sent in self.other_sentences) and not names_target:
             return "other_perturbation"
         for m in _OTHER_PERTURBATION.finditer(clause):
@@ -404,7 +412,8 @@ def _match_in_scope(ctx: _Context, sent: tuple[int, int], work: str,
                                   status=status, reason=reason))
     for m in take(_P_SIG_ELIDED):
         # "... and 16 had FDR<=0.5": the unit is the earlier count's in the same sentence.
-        earlier = [a for a in out if a.quantity == "n_sig" and sent[0] <= a.start < m.start()]
+        earlier = sorted((a for a in out if a.quantity == "n_sig"
+                          and sent[0] <= a.start < m.start()), key=lambda a: a.start)
         if not earlier:
             continue
         lead = _lead_in(ctx, sent, work, m)

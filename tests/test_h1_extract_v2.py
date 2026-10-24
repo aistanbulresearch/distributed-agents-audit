@@ -435,3 +435,22 @@ def test_v2_elided_count_inherits_the_antecedents_restriction():
     counts = {a.value_text: (a.status, a.reason) for a in out if a.quantity == "n_sig"}
     assert counts == {"9": ("out_of_scope", "subset_scope"),
                       "16": ("out_of_scope", "subset_scope")}
+
+
+def test_v2_elided_count_takes_the_nearest_preceding_antecedent():
+    # Review round 18, finding 1 (synthetic): both count forms, restricted and not.
+    out = extract("9 genes had P<0.001; across 41 selected genes, 7 FDR<0.05 genes and 16 had "
+                  "P<0.01.", "Spast", "151 TH Prkcd Grin2c Glut", V2)
+    status = {a.value_text: a.status for a in out if a.quantity == "n_sig"}
+    assert status == {"9": "extracted", "7": "out_of_scope", "16": "out_of_scope"}
+    out = extract("4 FDR<0.05 rows and 12 genes had P<0.001 and 30 had P<0.01.", "Spast",
+                  "151 TH Prkcd Grin2c Glut", V2)
+    assert {a.value_text: a.unit for a in out if a.quantity == "n_sig"}["30"] == "genes"
+
+
+def test_v2_switching_back_to_the_target_restores_its_context():
+    # Review round 18, finding 2 (synthetic).
+    out = extract("Tfrc perturbation had 4 genes at FDR<0.05. Spast knockout: Tfrc logFC 0.5, "
+                  "FDR=0.01.", "Spast", "151 TH Prkcd Grin2c Glut", V2)
+    values = {(a.quantity, a.value_text, a.status) for a in out if a.gene == "Tfrc"}
+    assert values == {("logfc", "0.5", "extracted"), ("padj", "0.01", "extracted")}
