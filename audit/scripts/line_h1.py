@@ -15,7 +15,9 @@ matcher are used; every choice beyond the pre-registration is listed in
 
 import json
 import logging
+import os
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -48,6 +50,8 @@ CLAIM = FreezeClaim(
     manifest_path="registrations/H1_freeze.json",
     manifest_sha256="f348e305c44727fb9d1d1395ede8c32771a6c5e68b1c1b76c5ea01a105859356")
 SWH_API = "https://archive.softwareheritage.org/api/1/"
+RETRY_TAG = "prereg-H1-retry1"
+RETRY_MANIFEST = "registrations/H1_retry.json"
 VALUE_COLUMNS = ("logfoldchanges", "pvals", "pvals_adj", "scores")
 KEY_COLUMNS = ("gene_target", "group_name", "names")
 REL_TOL, ABS_TOL, AGREE_MIN = 1e-6, 1e-12, 0.999
@@ -58,16 +62,52 @@ def reference_path() -> Path:
     return paths.resolve_input(manifest["reference"]["key"])
 
 
+def _swh_get(path: str) -> dict:
+    r = httpx.get(SWH_API + path, timeout=60, follow_redirects=True)
+    r.raise_for_status()
+    return r.json()
+
+
 def guard() -> dict[str, str]:
-    def get(path: str) -> dict:
-        r = httpx.get(SWH_API + path, timeout=60, follow_redirects=True)
-        r.raise_for_status()
-        return r.json()
     paths.check_upstream_pin()
-    receipt = verify_freeze(CLAIM, REG / "H1_freeze.json", paths.REPO_ROOT.joinpath, get,
+    receipt = verify_freeze(CLAIM, REG / "H1_freeze.json", paths.REPO_ROOT.joinpath, _swh_get,
                             paths.resolve_input)
     logger.info("guard passed: %s", receipt)
     return receipt
+
+
+def retry_guard() -> dict[str, str]:
+    """The retry (deviation D-1) is bound like the freeze: the published manifest
+    ``registrations/H1_retry.json`` lists the SHA-256 of the corrected parser and the
+    evaluation code, the tag ``prereg-H1-retry1`` points to the commit holding it, and the
+    Software Heritage archive holds that manifest. The claim file (commit and manifest hash)
+    is added after the tag, so it is not itself in the manifest."""
+    claim_file = REG / "H1_retry_claim.json"
+    if not claim_file.is_file():
+        raise SystemExit("no published retry claim; the retry is not frozen yet")
+    data = json.loads(claim_file.read_text(encoding="utf-8"))
+    claim = FreezeClaim(origin=CLAIM.origin, tag=RETRY_TAG, commit=data["commit"],
+                        manifest_path=RETRY_MANIFEST, manifest_sha256=data["manifest_sha256"])
+    receipt = verify_freeze(claim, paths.REPO_ROOT / RETRY_MANIFEST, paths.REPO_ROOT.joinpath,
+                            _swh_get, paths.resolve_input)
+    logger.info("retry guard passed: %s", receipt)
+    return {**receipt, "manifest_sha256": data["manifest_sha256"]}
+
+
+def reserve_attempt(path: Path, record: dict) -> None:
+    """Create the attempt record atomically; refuse if it exists. It is never removed, so an
+    interrupted or failed attempt still counts as the one attempt."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError as e:
+        raise SystemExit(
+            f"{path.name} exists: the single sample-2 attempt was already made") from e
+    with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(record, indent=1) + "\n")
+        f.flush()
+        os.fsync(f.fileno())
+    logger.info("attempt reserved: %s", path)
 
 
 def write(stage: str, result: dict) -> Path:
@@ -161,14 +201,22 @@ def load_key(path: Path) -> dict[tuple[str, str], list[Annotated]]:
 EXTRACTORS = {"v1": h1_extract, "v2": h1_extract_v2}
 
 
-def gate(sample: int = 1, version: str = "v1") -> dict:
-    """Section 5. ``v1`` is the frozen extractor; ``v2`` is the single pre-registered retry
-    (registrations/H1_deviations.md), evaluated once, on sample 2 only."""
-    if version == "v2" and sample != 2:
-        raise SystemExit("the retry extractor is evaluated on sample 2 only")
-    out = OUT / f"line_h1_gate_sample{sample}_{version}.json"
-    if version == "v2" and out.exists():
-        raise SystemExit("the sample-2 evaluation has already run; there is no further retry")
+ALLOWED_GATES = {(1, "v1"), (2, "v2")}
+ATTEMPT = OUT / "line_h1_gate_sample2_v2.attempt.json"
+
+
+def gate(sample: int, version: str, freeze_receipt: dict) -> dict:
+    """Section 5. ``v1`` is the frozen extractor, gated on sample 1; ``v2`` is the single
+    pre-registered retry (registrations/H1_deviations.md), evaluated once, on sample 2 only,
+    after the retry guard and an atomic attempt reservation. No other pair runs."""
+    if (sample, version) not in ALLOWED_GATES:
+        raise SystemExit(f"gate {sample} {version} is not allowed: only {sorted(ALLOWED_GATES)}")
+    retry_receipt = None
+    if sample == 2:
+        retry_receipt = retry_guard()
+        reserve_attempt(ATTEMPT, {
+            "started_utc": datetime.now(UTC).isoformat(), "sample": 2, "extractor": "v2",
+            "freeze_receipt": freeze_receipt, "retry_receipt": retry_receipt})
     extract = EXTRACTORS[version].extract
     vocab, vocab_info = vocabulary()
     rows = ledger()
@@ -194,6 +242,7 @@ def gate(sample: int = 1, version: str = "v1") -> dict:
         "disagreements": [{"row": list(d["row"]), "value_text": d["value_text"],
                            "fields": d["fields"]} for d in report.disagreements],
         "passes": passes(report),
+        "retry_receipt": retry_receipt,
     }
 
 
@@ -204,8 +253,9 @@ def main() -> None:
     if stage == "equivalence":
         result = equivalence()
     elif stage == "gate":
-        result = gate(int(sys.argv[2]) if len(sys.argv) > 2 else 1,
-                      sys.argv[3] if len(sys.argv) > 3 else "v1")
+        if len(sys.argv) != 4:
+            sys.exit("usage: line_h1 gate <sample> <extractor>")
+        result = gate(int(sys.argv[2]), sys.argv[3], receipt)
     else:
         sys.exit(f"unknown stage {stage!r}")
     result["guard_receipt"] = receipt

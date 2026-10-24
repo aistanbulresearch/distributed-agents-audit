@@ -376,11 +376,16 @@ def test_v2_hyphenated_cell_counts_and_column_spellings():
     assert {("n_pert", "65"), ("n_sig", "0"), ("padj", "0.458853")} <= {g[:2] for g in got}
 
 
-def test_v2_target_transcript_rows_bind_the_target_and_n_equals_is_perturbed_cells():
+def test_v2_values_without_a_gene_in_their_sentence_stay_unbound_and_n_equals_is_cells():
+    # Section 3 binds equalities only to a preceding gene in the same sentence (review round
+    # 17): "Hspd1 target transcript" in the previous sentence does not bind these values.
     text = ("Hspd1 target transcript was measured in 22 cell types. Nominal negative rows: 151 TH "
             "Prkcd Grin2c Glut score -3.393, logFC -0.564, p=0.000691, rank 3/17,259, n=137.")
     got = _v2(text, "Hspd1")
-    assert ("logfc", "-0.564", "151 TH Prkcd Grin2c Glut", "Hspd1", None, None) in got
+    assert not [g for g in got if g[0] in ("score", "logfc", "pval", "padj")]
+    unresolved = {a.quantity for a in extract(text, "Hspd1", None, V2)
+                  if a.status == "unresolved_context"}
+    assert {"score", "logfc", "pval"} <= unresolved
     assert ("n_pert", "137", "151 TH Prkcd Grin2c Glut", None, None, None) in got
     assert ("n_rows", "17,259", "151 TH Prkcd Grin2c Glut", None, "genes", None) in got
 
@@ -421,3 +426,12 @@ def test_v2_second_smallest_is_not_a_minimum():
 def test_v2_thresholds_and_counts_are_never_row_totals():
     got = _v2("The two Nfic FDR < 0.05 rows were Bambi in 151 TH Prkcd Grin2c Glut.", "Nfib")
     assert not [g for g in got if g[0] == "n_rows"]
+
+
+def test_v2_elided_count_inherits_the_antecedents_restriction():
+    # Review round 17, finding 4 (synthetic).
+    out = extract("Across 41 selected genes, 9 genes had P<0.001 and 16 had P<0.01.", "Spast",
+                  "151 TH Prkcd Grin2c Glut", V2)
+    counts = {a.value_text: (a.status, a.reason) for a in out if a.quantity == "n_sig"}
+    assert counts == {"9": ("out_of_scope", "subset_scope"),
+                      "16": ("out_of_scope", "subset_scope")}

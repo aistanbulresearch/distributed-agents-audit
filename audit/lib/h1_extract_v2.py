@@ -12,7 +12,7 @@ match in-scope patterns in a fixed order, masking each match -> bind cell type a
 """
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 NUM = r"[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:[eE][+-]?\d+)?"
 _LABEL_MASK = "§"
@@ -114,8 +114,6 @@ _SENTENCE_LEAD = re.compile(
     rf"|(?P<g3>{_GENE}):\s*\d[\d,]*\s+perturbed"
     rf"|(?:two|three|\d+)\s+(?P<g4>{_GENE})\s+(?:FDR|q|p)\b"
     rf"|(?P<cmp>Comparator\b))")
-_TARGET_TRANSCRIPT = (r"self-transcript|self\s+rows?|target-transcript|"
-                      r"(?<![\w-])target\s+(?:transcript|rows?)\b")
 
 _OUT_OF_SCOPE = (
     # Any numeric range (0.895-0.917, 23-191, -0.21 to -0.4) before anything else, so that
@@ -261,14 +259,6 @@ class _Context:
                                self.masked[a:b]) for g in leads):
                 flagged.add((a, b))
         return flagged
-
-    def mentions_target_transcript(self, sent: tuple[int, int]) -> bool:
-        """The sentence, or the one before it, is about the target's own transcript rows."""
-        t = re.escape(self.target)
-        pattern = rf"(?i){_TARGET_TRANSCRIPT}|(?<![\w-]){t}\s+(?:target\s+)?transcript\b"
-        i = self.sentence_bounds.index(sent) if sent in self.sentence_bounds else -1
-        spans = [sent] + ([self.sentence_bounds[i - 1]] if i > 0 else [])
-        return any(re.search(pattern, self.masked[a:b]) for a, b in spans)
 
     def cell(self, sent: tuple[int, int], pos: int,
              inherit: bool) -> tuple[str | None, str | None]:
@@ -418,10 +408,16 @@ def _match_in_scope(ctx: _Context, sent: tuple[int, int], work: str,
         if not earlier:
             continue
         lead = _lead_in(ctx, sent, work, m)
-        out.append(_count(ctx, sent, m, _count_value(m.group("k")), lead,
-                          unit=earlier[-1].unit))
+        count = _count(ctx, sent, m, _count_value(m.group("k")), lead, unit=earlier[-1].unit)
+        if earlier[-1].status == "out_of_scope":
+            # The elided count concerns the same population as its antecedent: "Across 41
+            # selected genes, 9 genes had P<0.001 and 16 had P<0.01" restricts both.
+            count = replace(count, status="out_of_scope", reason=earlier[-1].reason)
+        out.append(count)
         if m.group("N"):
             status, reason = _subset_status(lead)
+            if earlier[-1].status == "out_of_scope":
+                status, reason = "out_of_scope", earlier[-1].reason
             out.append(_assertion(ctx, sent, m.start(), "n_rows", "=", m.group("N"),
                                   needs_cell=False, unit=earlier[-1].unit,
                                   self_inclusion=_self_inclusion(lead, ctx.target),
@@ -475,8 +471,6 @@ def _match_in_scope(ctx: _Context, sent: tuple[int, int], work: str,
             gene = ctx.gene(sent, m.start())
         else:
             gene = ctx.adjacent_gene(m.start())
-        if gene is None and relation in ("=", ":") and ctx.mentions_target_transcript(sent):
-            gene = ctx.target
         out.append(_assertion(ctx, sent, m.start(), _key_quantity(m.group("key")),
                               relation, m.group("num"), gene=gene, needs_gene=True,
                               scope="gene", inherit=True))
