@@ -4,19 +4,19 @@
   "tag": "prereg-H1-retry1",
   "freeze_tag": "prereg-H1-v1",
   "freeze_code_commit": "b2c392f6e2018b2e1a23e87d929be1244ca092f6",
-  "code_commit": "8f2df2a9aa6028ad64378f9f42290f8814b3b9e6",
+  "code_commit": "dd27fcd74081810d7d01f42d471b78654eca4d59",
   "reference": {
     "key": "cache:hf/perturbai__wholebrain_crispr_atlas/a7c65dc0a64da4bd47cf6ef5f4dec6c7ef745e87/analysis/2603_shi_manuscript/diff_expr_genes/wilcoxon_de_results_group_name_final_data_no_multi_guide_cells.parquet",
     "sha256": "cade64a236e3707e91c289bae32282e8b919276760223e581af2342232bcb969"
   },
   "artifacts": {
-    "audit/lib/h1_extract_v2.py": "40dd3fa9daeb414e1dccca949fc379402512e16968c8dadf23176cb332dc087f",
-    "tests/test_h1_extract_v2.py": "902857d7b33a3bda36f2702f55c7061ad14d27dd1ad328571eb285a8d13e9cf2",
+    "audit/lib/h1_extract_v2.py": "f2eab773e96c93f6d5f6e577f3137fa790615ff2c4e592847b96fcdf7a1272da",
+    "tests/test_h1_extract_v2.py": "531fcffe08419b6c36a2206b4ee7606b3afb3072ec504ae2e9fb72cfe996eb7f",
     "audit/scripts/h1_dev_gate.py": "805d5a01cadb954dc97e82ee19ba15c14bc55130f439c18e44ca8eb36bb2022d",
     "audit/scripts/line_h1.py": "ce8f23a319a84ce4f973530659a1efbbab7d0e9a6bfc0dac63c4e1d709dbca56",
     "tests/test_line_h1.py": "d23676e74914edee7d72abec92833030929c4870b17759e5a4ec8c8ed10b0b6c",
     "audit/scripts/h1_retry_manifest.py": "f26a1687123e2100e3ef6ee383e275ae650b9b883b4fd89b1af4a64bcc036a89",
-    "registrations/H1_deviations.md": "eaa46cb8d24dd89ef2e58aed51b9d1c0bf8535400b28a0b46bb10c4027790783",
+    "registrations/H1_deviations.md": "1ba779bfa6cbe37d33b574addb128f91d14f499e9233481a1a505263eb8517ea",
     "audit/results/h1/line_h1_equivalence.json": "6688ae47c8d668b32a08d8bc26b23b271125323587d6e913eecbf692536a5d85",
     "audit/results/h1/line_h1_gate_sample1_v1.json": "e27ceecef0837ca018ec8c8426142200040513d5b4ae4751e40b8812cda3cdef"
   }
