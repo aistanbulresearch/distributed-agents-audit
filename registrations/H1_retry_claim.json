@@ -1,0 +1,12 @@
+{
+  "tag": "prereg-H1-retry1",
+  "tag_object": "9937db0951faf7e45623236488c2915710542767",
+  "commit": "4de8816038b37a6e0cb2d65adaedd2064301a387",
+  "manifest_path": "registrations/H1_retry.json",
+  "manifest_sha256": "237b5db3175d4a0152116c925140b88ce4630d25b7244c944aca69c440a519f6",
+  "software_heritage": {
+    "save_request": 2572848,
+    "snapshot": "swh:1:snp:8389764ee4552b35df6ea94feeb8c55a61eb1648",
+    "visit_date": "2026-10-24T18:02:16.528Z"
+  }
+}
